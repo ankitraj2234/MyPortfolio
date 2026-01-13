@@ -11,10 +11,10 @@
   /* Amber 400 - Vibrant Highlights */
 
   /* Backgrounds */
-  --background: #030014;
-  /* Very dark rich blue-black */
-  --surface: #0f172a;
-  /* Slate 900 */
+  --background: #0a0a0a;
+  /* Neutral Dark */
+  --surface: #171717;
+  /* Neutral Zinc 900 */
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
 
@@ -51,8 +51,8 @@ body {
   background: var(--background);
   /* Mesh Gradient Background */
   background-image:
-    radial-gradient(circle at 15% 50%, rgba(109, 40, 217, 0.15), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.15), transparent 25%);
+    radial-gradient(circle at 15% 50%, rgba(5, 150, 105, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(217, 119, 6, 0.15), transparent 25%);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
