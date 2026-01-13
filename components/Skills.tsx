@@ -45,7 +45,7 @@ export default function Skills() {
                     style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem', justifyContent: 'center' }}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.1 }}
                 >
                     <Award size={40} style={{ color: 'var(--primary-glow)' }} />
                     <h2 className="text-gradient" style={{ fontSize: '2.5rem' }}>Skills & Certifications</h2>
@@ -63,7 +63,7 @@ export default function Skills() {
                                 style={{ padding: '0.75rem 1.5rem', borderRadius: '99px', fontSize: '0.95rem', cursor: 'default' }}
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false, amount: 0.1 }}
                                 whileHover={{
                                     scale: 1.1,
                                     borderColor: 'var(--primary-glow)',
@@ -89,7 +89,7 @@ export default function Skills() {
                                 style={{ padding: '2rem', borderRadius: '1rem' }}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false, amount: 0.1 }}
                                 whileHover={{
                                     scale: 1.03,
                                     boxShadow: '0 10px 30px rgba(109, 40, 217, 0.3)'

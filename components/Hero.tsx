@@ -37,7 +37,8 @@ export default function Hero() {
                 className={`container ${styles.content}`}
                 variants={containerVariants}
                 initial="hidden"
-                animate="visible"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.1 }}
             >
                 <motion.p className={styles.greeting} variants={itemVariants}>
                     Hello, I&apos;m

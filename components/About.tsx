@@ -50,7 +50,7 @@ export default function About() {
                     style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem', justifyContent: 'center' }}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.1 }}
                 >
                     <motion.div
                         animate={{
@@ -98,7 +98,7 @@ export default function About() {
                         className={`glass-panel ${styles.bioCard}`}
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.1 }}
                         whileHover={{
                             scale: 1.02,
                             boxShadow: '0 0 20px rgba(109, 40, 217, 0.3)'
@@ -125,7 +125,7 @@ export default function About() {
                                 className={`glass-panel ${styles.interestCard}`}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false, amount: 0.1 }}
                                 whileHover={{
                                     scale: 1.05,
                                     boxShadow: '0 0 20px rgba(109, 40, 217, 0.3)'

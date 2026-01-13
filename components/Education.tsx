@@ -33,7 +33,7 @@ export default function Education() {
                     className={styles.header}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.1 }}
                 >
                     <GraduationCap size={40} style={{ color: 'var(--primary-glow)' }} />
                     <h2 className="text-gradient" style={{ fontSize: '2.5rem', textAlign: 'center' }}>
@@ -48,7 +48,7 @@ export default function Education() {
                             className={styles.item}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.1 }}
                             transition={{ delay: index * 0.2 }}
                         >
                             <motion.div

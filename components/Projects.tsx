@@ -56,7 +56,7 @@ export default function Projects() {
                         className="text-gradient"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.1 }}
                     >
                         Featured Projects
                     </motion.h2>
@@ -65,7 +65,7 @@ export default function Projects() {
                         className={styles.filterContainer}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.1 }}
                         transition={{ delay: 0.2 }}
                     >
                         {(["All", "Android", "Desktop"] as Category[]).map((cat) => (
