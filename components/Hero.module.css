@@ -69,16 +69,17 @@
 
 .primaryBtn {
     background: var(--primary);
-    color: white;
+    color: #0f172a;
+    /* Dark text */
     border: 1px solid var(--primary);
-    box-shadow: 0 0 20px rgba(109, 40, 217, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .primaryBtn:hover {
     background: var(--primary-glow);
-    box-shadow: 0 0 40px rgba(109, 40, 217, 0.6);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);
-    color: white;
+    color: #000;
 }
 
 .secondaryBtn {

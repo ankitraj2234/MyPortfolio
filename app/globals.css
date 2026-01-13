@@ -1,13 +1,14 @@
 :root {
   /* Brand Colors - Modern Deep Space Theme */
-  --primary: #6d28d9;
-  /* Violet 700 */
-  --primary-glow: #8b5cf6;
-  /* Violet 500 */
-  --secondary: #06b6d4;
-  /* Cyan 500 */
-  --accent: #f472b6;
-  /* Pink 400 */
+  /* Brand Colors - Lightning Silver & Electric Blue Theme */
+  --primary: #cbd5e1;
+  /* Silver/Slate 300 */
+  --primary-glow: #ffffff;
+  /* Pure White Lightning */
+  --secondary: #0ea5e9;
+  /* Sky 500 - Electric Blue */
+  --accent: #38bdf8;
+  /* Sky 400 */
 
   /* Backgrounds */
   --background: #030014;

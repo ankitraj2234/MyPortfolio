@@ -30,9 +30,10 @@
 .filterBtn:hover,
 .activeFilter {
     background: var(--primary);
-    color: white;
+    color: #0f172a;
+    /* Dark text */
     border-color: var(--primary);
-    box-shadow: 0 0 15px rgba(109, 40, 217, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 .grid {
@@ -140,13 +141,13 @@
 
 .demoBtn {
     background: var(--primary);
-    color: white;
+    color: #0f172a;
     border: none;
 }
 
 .demoBtn:hover {
     background: var(--primary-glow);
-    color: white;
+    color: #000;
 }
 
 .codeBtn {
