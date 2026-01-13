@@ -99,7 +99,6 @@ export default function About() {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
                         whileHover={{ scale: 1.02 }}
                     >
                         <h3 style={{ marginBottom: '1.5rem' }}>Solutions Engineer & Developer</h3>
@@ -123,11 +122,11 @@ export default function About() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
                                 whileHover={{
                                     scale: 1.05,
                                     boxShadow: '0 0 20px rgba(109, 40, 217, 0.3)'
                                 }}
+                                transition={{ duration: 0.15 }}
                             >
                                 <div className={styles.iconWrapper}>{item.icon}</div>
                                 <div>

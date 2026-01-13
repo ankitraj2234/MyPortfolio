@@ -64,12 +64,12 @@ export default function Skills() {
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.05 }}
                                 whileHover={{
                                     scale: 1.1,
                                     borderColor: 'var(--primary-glow)',
                                     boxShadow: '0 0 20px rgba(109, 40, 217, 0.3)'
                                 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                             >
                                 {skill}
                             </motion.div>
@@ -90,11 +90,11 @@ export default function Skills() {
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: 0.1 + (index * 0.1) }}
                                 whileHover={{
                                     scale: 1.03,
                                     boxShadow: '0 10px 30px rgba(109, 40, 217, 0.3)'
                                 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                             >
                                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
                                     <Award size={24} style={{ color: 'var(--secondary)', flexShrink: 0, marginTop: '0.25rem' }} />

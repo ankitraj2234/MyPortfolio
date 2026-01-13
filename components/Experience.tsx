@@ -92,7 +92,7 @@ export default function Experience() {
                                         scale: 1.03,
                                         boxShadow: '0 10px 40px rgba(109, 40, 217, 0.3)'
                                     }}
-                                    transition={{ duration: 0.3 }}
+                                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                                 >
                                     <div className={styles.date}>{exp.date}</div>
                                     <h3 className={styles.role}>{exp.role}</h3>

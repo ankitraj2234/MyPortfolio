@@ -33,6 +33,7 @@ export default function Contact() {
                             key={index}
                             href={social.href}
                             whileHover={{ y: -5, color: 'var(--primary-glow)' }}
+                            transition={{ duration: 0.2 }}
                             style={{ color: 'var(--foreground)', padding: '1rem', background: 'var(--glass-bg)', borderRadius: '50%', border: '1px solid var(--glass-border)' }}
                             aria-label={social.label}
                         >

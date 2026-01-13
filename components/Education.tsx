@@ -54,6 +54,7 @@ export default function Education() {
                             <motion.div
                                 className={`glass-panel ${styles.leftContent}`}
                                 whileHover={{ scale: 1.05 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                             >
                                 <div className={styles.degree}>{item.degree}</div>
                                 <div className={styles.institution}>{item.institution}</div>
@@ -66,6 +67,7 @@ export default function Education() {
                             <motion.div
                                 className={`glass-panel ${styles.rightContent}`}
                                 whileHover={{ scale: 1.05 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                             >
                                 <div className={styles.year}>{item.year}</div>
                                 <div className={styles.grade}>{item.grade}</div>

@@ -74,6 +74,7 @@ export default function Projects() {
                                 onClick={() => setFilter(cat)}
                                 className={`${styles.filterBtn} ${filter === cat ? styles.activeFilter : ""}`}
                                 whileHover={{ scale: 1.05 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 {cat}
@@ -91,12 +92,12 @@ export default function Projects() {
                                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                                transition={{ duration: 0.4, delay: index * 0.1 }}
                                 className={`glass-panel ${styles.card}`}
                                 whileHover={{
                                     y: -10,
                                     boxShadow: '0 20px 40px rgba(109, 40, 217, 0.3)'
                                 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                             >
                                 <div className={styles.imageWrapper}>
                                     <Image
@@ -119,6 +120,7 @@ export default function Projects() {
                                                 key={t}
                                                 className={styles.tag}
                                                 whileHover={{ scale: 1.05, backgroundColor: 'rgba(109, 40, 217, 0.2)' }}
+                                                transition={{ duration: 0.15 }}
                                             >
                                                 {t}
                                             </motion.span>
