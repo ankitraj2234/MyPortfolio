@@ -77,8 +77,8 @@
 
 .cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
-    /* Blue glow */
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+    /* Emerald glow */
     color: white;
 }
 

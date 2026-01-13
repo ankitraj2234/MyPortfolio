@@ -71,12 +71,12 @@
     background: var(--primary);
     color: white;
     border: 1px solid var(--primary);
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
 }
 
 .primaryBtn:hover {
     background: var(--primary-glow);
-    box-shadow: 0 0 40px rgba(37, 99, 235, 0.6);
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.6);
     transform: translateY(-2px);
     color: white;
 }

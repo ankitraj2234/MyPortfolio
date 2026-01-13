@@ -1,14 +1,14 @@
 :root {
   /* Brand Colors - Modern Deep Space Theme */
-  /* Brand Colors - Deep Royal Blue & Teal (Professional Tech) */
-  --primary: #2563eb;
-  /* Royal Blue 600 - Trust, Engineering */
-  --primary-glow: #3b82f6;
-  /* Blue 500 - Active State */
-  --secondary: #0d9488;
-  /* Teal 600 - Sophisticated Companion */
-  --accent: #2dd4bf;
-  /* Teal 400 - Vibrant Highlights */
+  /* Brand Colors - Secure Emerald & Amber (No Blue) */
+  --primary: #059669;
+  /* Emerald 600 - Security, Success, Growth */
+  --primary-glow: #10b981;
+  /* Emerald 500 - Active State */
+  --secondary: #d97706;
+  /* Amber 600 - Warm Companion */
+  --accent: #fbbf24;
+  /* Amber 400 - Vibrant Highlights */
 
   /* Backgrounds */
   --background: #030014;
