@@ -67,20 +67,19 @@
     padding: 0.6rem 1.25rem;
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-glow) 100%);
     border-radius: 99px;
-    color: #0f172a;
-    /* Slate 900 - Dark Text for Silver Bg */
-    font-weight: 700;
+    color: #fff;
+    font-weight: 600;
     font-size: 0.9rem;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
-    /* White glow */
-    color: #000;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+    /* Blue glow */
+    color: white;
 }
 
 @media (max-width: 768px) {

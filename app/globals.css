@@ -1,14 +1,14 @@
 :root {
   /* Brand Colors - Modern Deep Space Theme */
-  /* Brand Colors - Lightning Silver & Electric Blue Theme */
-  --primary: #cbd5e1;
-  /* Silver/Slate 300 */
-  --primary-glow: #ffffff;
-  /* Pure White Lightning */
-  --secondary: #0ea5e9;
-  /* Sky 500 - Electric Blue */
-  --accent: #38bdf8;
-  /* Sky 400 */
+  /* Brand Colors - Deep Royal Blue & Teal (Professional Tech) */
+  --primary: #2563eb;
+  /* Royal Blue 600 - Trust, Engineering */
+  --primary-glow: #3b82f6;
+  /* Blue 500 - Active State */
+  --secondary: #0d9488;
+  /* Teal 600 - Sophisticated Companion */
+  --accent: #2dd4bf;
+  /* Teal 400 - Vibrant Highlights */
 
   /* Backgrounds */
   --background: #030014;
