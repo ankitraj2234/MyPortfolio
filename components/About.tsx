@@ -99,7 +99,11 @@ export default function About() {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        whileHover={{ scale: 1.02 }}
+                        whileHover={{
+                            scale: 1.02,
+                            boxShadow: '0 0 20px rgba(109, 40, 217, 0.3)'
+                        }}
+                        transition={{ duration: 0.15 }}
                     >
                         <h3 style={{ marginBottom: '1.5rem' }}>Solutions Engineer & Developer</h3>
                         <p className={styles.bioText}>
