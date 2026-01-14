@@ -1,12 +1,12 @@
 :root {
   /* Brand Colors - Modern Deep Space Theme */
-  /* Brand Colors - Secure Emerald & Amber (No Blue) */
-  --primary: #059669;
-  /* Emerald 600 - Security, Success, Growth */
-  --primary-glow: #10b981;
-  /* Emerald 500 - Active State */
-  --secondary: #d97706;
-  /* Amber 600 - Warm Companion */
+  /* Brand Colors - Crimson Red & Gold (Red Team Security Theme) */
+  --primary: #be123c;
+  /* Rose 700 - Bold, Security, Red Team */
+  --primary-glow: #f43f5e;
+  /* Rose 500 - Active State */
+  --secondary: #b45309;
+  /* Amber 700 - Gold/Bronze Companion */
   --accent: #fbbf24;
   /* Amber 400 - Vibrant Highlights */
 
@@ -51,8 +51,8 @@ body {
   background: var(--background);
   /* Mesh Gradient Background */
   background-image:
-    radial-gradient(circle at 15% 50%, rgba(5, 150, 105, 0.15), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(217, 119, 6, 0.15), transparent 25%);
+    radial-gradient(circle at 15% 50%, rgba(190, 18, 60, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(180, 83, 9, 0.15), transparent 25%);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -69,9 +69,9 @@ export default function About() {
                         <motion.div
                             animate={{
                                 boxShadow: [
-                                    '0 0 20px rgba(16, 185, 129, 0.3)',
-                                    '0 0 40px rgba(16, 185, 129, 0.6)',
-                                    '0 0 20px rgba(16, 185, 129, 0.3)'
+                                    '0 0 20px rgba(244, 63, 94, 0.3)',
+                                    '0 0 40px rgba(244, 63, 94, 0.6)',
+                                    '0 0 20px rgba(244, 63, 94, 0.3)'
                                 ]
                             }}
                             transition={{
@@ -128,7 +128,7 @@ export default function About() {
                                 viewport={{ once: false, amount: 0.1 }}
                                 whileHover={{
                                     scale: 1.05,
-                                    boxShadow: '0 0 20px rgba(16, 185, 129, 0.3)'
+                                    boxShadow: '0 0 20px rgba(244, 63, 94, 0.3)'
                                 }}
                                 transition={{ duration: 0.15 }}
                             >
