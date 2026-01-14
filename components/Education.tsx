@@ -53,7 +53,10 @@ export default function Education() {
                         >
                             <motion.div
                                 className={`glass-panel ${styles.leftContent}`}
-                                whileHover={{ scale: 1.05 }}
+                                whileHover={{
+                                    scale: 1.05,
+                                    boxShadow: '0 0 20px rgba(244, 63, 94, 0.3)'
+                                }}
                                 transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                             >
                                 <div className={styles.degree}>{item.degree}</div>
@@ -66,7 +69,10 @@ export default function Education() {
 
                             <motion.div
                                 className={`glass-panel ${styles.rightContent}`}
-                                whileHover={{ scale: 1.05 }}
+                                whileHover={{
+                                    scale: 1.05,
+                                    boxShadow: '0 0 20px rgba(244, 63, 94, 0.3)'
+                                }}
                                 transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                             >
                                 <div className={styles.year}>{item.year}</div>

@@ -67,7 +67,7 @@ export default function Skills() {
                                 whileHover={{
                                     scale: 1.1,
                                     borderColor: 'var(--primary-glow)',
-                                    boxShadow: '0 0 20px rgba(109, 40, 217, 0.3)'
+                                    boxShadow: '0 0 20px rgba(244, 63, 94, 0.3)'
                                 }}
                                 transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                             >
@@ -92,7 +92,7 @@ export default function Skills() {
                                 viewport={{ once: false, amount: 0.1 }}
                                 whileHover={{
                                     scale: 1.03,
-                                    boxShadow: '0 10px 30px rgba(109, 40, 217, 0.3)'
+                                    boxShadow: '0 10px 30px rgba(244, 63, 94, 0.3)'
                                 }}
                                 transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                             >

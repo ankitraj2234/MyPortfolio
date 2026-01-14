@@ -101,7 +101,7 @@ export default function About() {
                         viewport={{ once: false, amount: 0.1 }}
                         whileHover={{
                             scale: 1.02,
-                            boxShadow: '0 0 20px rgba(16, 185, 129, 0.3)'
+                            boxShadow: '0 0 20px rgba(244, 63, 94, 0.3)'
                         }}
                         transition={{ duration: 0.15 }}
                     >
