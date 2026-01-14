@@ -49,9 +49,9 @@ export default function Experience() {
                         <motion.div
                             animate={{
                                 boxShadow: [
-                                    '0 0 20px rgba(6, 182, 212, 0.3)',
-                                    '0 0 40px rgba(6, 182, 212, 0.6)',
-                                    '0 0 20px rgba(6, 182, 212, 0.3)'
+                                    '0 0 20px rgba(244, 63, 94, 0.3)',
+                                    '0 0 40px rgba(244, 63, 94, 0.6)',
+                                    '0 0 20px rgba(244, 63, 94, 0.3)'
                                 ]
                             }}
                             transition={{
@@ -90,7 +90,7 @@ export default function Experience() {
                                     style={{ padding: '1.5rem', borderRadius: '1rem' }}
                                     whileHover={{
                                         scale: 1.03,
-                                        boxShadow: '0 10px 40px rgba(109, 40, 217, 0.3)'
+                                        boxShadow: '0 10px 40px rgba(244, 63, 94, 0.3)'
                                     }}
                                     transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                                 >
