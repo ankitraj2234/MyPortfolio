@@ -93,52 +93,53 @@ export default function Projects() {
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
                                 className={`glass-panel ${styles.card}`}
-                                y: - 10,
-                            boxShadow: '0 20px 40px rgba(244, 63, 94, 0.3)'
+                                whileHover={{
+                                    y: -10,
+                                    boxShadow: '0 20px 40px rgba(244, 63, 94, 0.3)'
                                 }}
-                        transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                             >
-                        <div className={styles.imageWrapper}>
-                            <Image
-                                src={project.image}
-                                alt={project.title}
-                                fill
-                                className={styles.image}
-                            />
-                            <div className={styles.category}>{project.category}</div>
-                        </div>
+                                <div className={styles.imageWrapper}>
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        fill
+                                        className={styles.image}
+                                    />
+                                    <div className={styles.category}>{project.category}</div>
+                                </div>
 
-                        <div className={styles.content}>
-                            <div className={styles.date}>{project.date}</div>
-                            <h3 className={styles.title}>{project.title}</h3>
-                            <p className={styles.desc}>{project.desc}</p>
+                                <div className={styles.content}>
+                                    <div className={styles.date}>{project.date}</div>
+                                    <h3 className={styles.title}>{project.title}</h3>
+                                    <p className={styles.desc}>{project.desc}</p>
 
-                            <div className={styles.tags}>
-                                {project.tech.map((t) => (
-                                    <motion.span
-                                        key={t}
-                                        className={styles.tag}
-                                        whileHover={{ scale: 1.05, backgroundColor: 'rgba(244, 63, 94, 0.2)' }}
-                                        transition={{ duration: 0.15 }}
-                                    >
-                                        {t}
-                                    </motion.span>
-                                ))}
-                            </div>
+                                    <div className={styles.tags}>
+                                        {project.tech.map((t) => (
+                                            <motion.span
+                                                key={t}
+                                                className={styles.tag}
+                                                whileHover={{ scale: 1.05, backgroundColor: 'rgba(244, 63, 94, 0.2)' }}
+                                                transition={{ duration: 0.15 }}
+                                            >
+                                                {t}
+                                            </motion.span>
+                                        ))}
+                                    </div>
 
-                            <div className={styles.links}>
-                                <a href={project.links.demo} className={`${styles.linkBtn} ${styles.demoBtn}`}>
-                                    <PlayCircle size={18} /> Demo
-                                </a>
-                                <a href={project.links.code} className={`${styles.linkBtn} ${styles.codeBtn}`}>
-                                    <Github size={18} /> Code
-                                </a>
-                            </div>
-                        </div>
-                </motion.div>
+                                    <div className={styles.links}>
+                                        <a href={project.links.demo} className={`${styles.linkBtn} ${styles.demoBtn}`}>
+                                            <PlayCircle size={18} /> Demo
+                                        </a>
+                                        <a href={project.links.code} className={`${styles.linkBtn} ${styles.codeBtn}`}>
+                                            <Github size={18} /> Code
+                                        </a>
+                                    </div>
+                                </div>
+                            </motion.div>
                         ))}
-            </AnimatePresence>
-        </motion.div>
+                    </AnimatePresence>
+                </motion.div>
             </div >
         </section >
     );
