@@ -16,6 +16,9 @@ export default function ProjectShowcase({ project }: Props) {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
     const [currentSlide, setCurrentSlide] = useState(0);
 
+    // Filter out poster (first image) for the gallery - poster only shows in hero carousel
+    const galleryScreenshots = project.screenshots.slice(1);
+
     // Auto-advance hero slideshow
     useEffect(() => {
         const timer = setInterval(() => {
@@ -29,13 +32,13 @@ export default function ProjectShowcase({ project }: Props) {
 
     const nextImage = () => {
         if (selectedImage !== null) {
-            setSelectedImage((selectedImage + 1) % project.screenshots.length);
+            setSelectedImage((selectedImage + 1) % galleryScreenshots.length);
         }
     };
 
     const prevImage = () => {
         if (selectedImage !== null) {
-            setSelectedImage((selectedImage - 1 + project.screenshots.length) % project.screenshots.length);
+            setSelectedImage((selectedImage - 1 + galleryScreenshots.length) % galleryScreenshots.length);
         }
     };
 
@@ -227,7 +230,7 @@ export default function ProjectShowcase({ project }: Props) {
             >
                 <h2>Screenshots</h2>
                 <div className={styles.galleryGrid}>
-                    {project.screenshots.map((screenshot, idx) => (
+                    {galleryScreenshots.map((screenshot, idx) => (
                         <motion.div
                             key={idx}
                             className={styles.galleryItem}
@@ -316,15 +319,15 @@ export default function ProjectShowcase({ project }: Props) {
                             onClick={(e) => e.stopPropagation()}
                         >
                             <Image
-                                src={project.screenshots[selectedImage].src}
-                                alt={project.screenshots[selectedImage].label}
+                                src={galleryScreenshots[selectedImage].src}
+                                alt={galleryScreenshots[selectedImage].label}
                                 fill
                                 className={styles.lightboxImage}
                             />
                             <div className={styles.lightboxCaption}>
-                                <h4>{project.screenshots[selectedImage].label}</h4>
-                                {project.screenshots[selectedImage].description && (
-                                    <p>{project.screenshots[selectedImage].description}</p>
+                                <h4>{galleryScreenshots[selectedImage].label}</h4>
+                                {galleryScreenshots[selectedImage].description && (
+                                    <p>{galleryScreenshots[selectedImage].description}</p>
                                 )}
                             </div>
                         </motion.div>
