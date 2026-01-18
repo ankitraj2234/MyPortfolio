@@ -40,6 +40,7 @@ export const projects: Project[] = [
             'Mobile responsive design'
         ],
         screenshots: [
+            { src: '/projects/algovision/AlgoVision Poster.png', label: 'AlgoVision', description: 'Next-Generation Algorithm Visualization Platform' },
             { src: '/projects/algovision/Home Tab.png', label: 'Main Dashboard', description: 'Clean, intuitive homepage with algorithm selection' },
             { src: '/projects/algovision/Algorithm Collection.png', label: 'Algorithm Library', description: 'Comprehensive collection of sorting, searching, and graph algorithms' },
             { src: '/projects/algovision/3D Playground.png', label: 'Immersive 3D Visualization', description: 'WebGL-powered 3D environment for spatial algorithm understanding' },
@@ -77,6 +78,7 @@ export const projects: Project[] = [
             'Scalable to multi-tenant SaaS'
         ],
         screenshots: [
+            { src: '/projects/srams/SRAMS Poster.png', label: 'SRAMS', description: 'Secure Role-Based Access Management System' },
             { src: '/projects/srams/Admin Login.png', label: 'Secure Admin Authentication', description: 'Desktop-only admin login with cryptographic headers' },
             { src: '/projects/srams/Admin Dahboard.png', label: 'Administration Control Center', description: 'Complete system oversight and configuration' },
             { src: '/projects/srams/User Login.png', label: 'User Portal Access', description: 'Secure web-based user authentication' },
