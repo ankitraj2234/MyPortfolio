@@ -1,48 +1,71 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Projects.module.css";
-import { Github, PlayCircle } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
+import { projects, type Project } from "@/lib/projects";
 
-type Category = "All" | "Android" | "Desktop";
+type Category = "All" | "Web" | "Full-Stack" | "Desktop";
 
-const projects = [
-    {
-        id: 1,
-        title: "Tourism Guide Android App",
-        category: "Android",
-        image: "/project-placeholder.png",
-        desc: "Android app for exploring tourist spots with Google Maps integration, location-based services, favorites section, and weather/location APIs. Features interactive Grid & List Views and SQLite + Firebase storage.",
-        tech: ["Kotlin", "Room Database", "SQLite", "Google Maps API", "Firebase"],
-        date: "Nov 2024 - Present",
-        links: { demo: "#", code: "#" }
-    },
-    {
-        id: 2,
-        title: "Algorithm Simulator V2",
-        category: "Desktop",
-        image: "/project-placeholder.png",
-        desc: "Professional JavaFX application with modern UI (AtlantaFX themes, dark/light mode) visualizing 20+ algorithms across stacks, linked lists, sorting, searching, and graph theory with real-time animations and performance analysis.",
-        tech: ["JavaFX", "AtlantaFX", "MVC Architecture", "Service/Repository Pattern"],
-        date: "Aug 2025 - Present (V2)",
-        links: { demo: "#", code: "#" }
-    },
-    {
-        id: 3,
-        title: "Algorithm Simulator V1",
-        category: "Desktop",
-        image: "/project-placeholder.png",
-        desc: "Interactive Java Swing desktop app to visualize core sorting algorithms and data structures with modular text-based visualization and comprehensive error handling.",
-        tech: ["Java Swing", "Data Structures", "Algorithm Visualization"],
-        date: "Jun 2023 - Jul 2023",
-        links: { demo: "#", code: "#" }
-    }
-];
+// Thumbnail carousel component for each project card
+function ThumbnailCarousel({ project }: { project: Project }) {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        if (project.screenshots.length <= 1) return;
+
+        const timer = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % project.screenshots.length);
+        }, 3000);
+
+        return () => clearInterval(timer);
+    }, [project.screenshots.length]);
+
+    return (
+        <div className={styles.carouselWrapper}>
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className={styles.carouselSlide}
+                >
+                    <Image
+                        src={project.screenshots[currentIndex].src}
+                        alt={project.screenshots[currentIndex].label}
+                        fill
+                        className={styles.image}
+                    />
+                </motion.div>
+            </AnimatePresence>
+
+            {/* Progress dots */}
+            <div className={styles.carouselDots}>
+                {project.screenshots.map((_, idx) => (
+                    <span
+                        key={idx}
+                        className={`${styles.dot} ${idx === currentIndex ? styles.activeDot : ''}`}
+                    />
+                ))}
+            </div>
+
+            {/* Current label */}
+            <div className={styles.slideLabel}>
+                {project.screenshots[currentIndex].label}
+            </div>
+        </div>
+    );
+}
 
 export default function Projects() {
     const [filter, setFilter] = useState<Category>("All");
+
+    const categories: Category[] = ["All", "Web", "Full-Stack"];
 
     const filteredProjects = projects.filter(
         (p) => filter === "All" || p.category === filter
@@ -61,6 +84,16 @@ export default function Projects() {
                         Featured Projects
                     </motion.h2>
 
+                    <motion.p
+                        className={styles.subtitle}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.1 }}
+                        transition={{ delay: 0.1 }}
+                    >
+                        Industry-grade applications built with modern technologies
+                    </motion.p>
+
                     <motion.div
                         className={styles.filterContainer}
                         initial={{ opacity: 0 }}
@@ -68,7 +101,7 @@ export default function Projects() {
                         viewport={{ once: false, amount: 0.1 }}
                         transition={{ delay: 0.2 }}
                     >
-                        {(["All", "Android", "Desktop"] as Category[]).map((cat) => (
+                        {categories.map((cat) => (
                             <motion.button
                                 key={cat}
                                 onClick={() => setFilter(cat)}
@@ -88,7 +121,7 @@ export default function Projects() {
                         {filteredProjects.map((project, index) => (
                             <motion.div
                                 layout
-                                key={project.id}
+                                key={project.slug}
                                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -97,50 +130,69 @@ export default function Projects() {
                                     y: -10,
                                     boxShadow: '0 20px 40px rgba(244, 63, 94, 0.3)'
                                 }}
-                                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                                transition={{ type: 'spring', stiffness: 400, damping: 17, delay: index * 0.1 }}
                             >
-                                <div className={styles.imageWrapper}>
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        fill
-                                        className={styles.image}
-                                    />
-                                    <div className={styles.category}>{project.category}</div>
-                                </div>
-
-                                <div className={styles.content}>
-                                    <div className={styles.date}>{project.date}</div>
-                                    <h3 className={styles.title}>{project.title}</h3>
-                                    <p className={styles.desc}>{project.desc}</p>
-
-                                    <div className={styles.tags}>
-                                        {project.tech.map((t) => (
-                                            <motion.span
-                                                key={t}
-                                                className={styles.tag}
-                                                whileHover={{ scale: 1.05, backgroundColor: 'rgba(244, 63, 94, 0.2)' }}
-                                                transition={{ duration: 0.15 }}
-                                            >
-                                                {t}
-                                            </motion.span>
-                                        ))}
+                                <Link href={`/projects/${project.slug}`} className={styles.cardLink}>
+                                    <div className={styles.imageWrapper}>
+                                        <ThumbnailCarousel project={project} />
+                                        <div className={styles.category}>{project.category}</div>
                                     </div>
 
-                                    <div className={styles.links}>
-                                        <a href={project.links.demo} className={`${styles.linkBtn} ${styles.demoBtn}`}>
-                                            <PlayCircle size={18} /> Demo
-                                        </a>
-                                        <a href={project.links.code} className={`${styles.linkBtn} ${styles.codeBtn}`}>
-                                            <Github size={18} /> Code
-                                        </a>
+                                    <div className={styles.content}>
+                                        <h3 className={styles.title}>{project.title}</h3>
+                                        <p className={styles.tagline}>{project.tagline}</p>
+
+                                        <div className={styles.tags}>
+                                            {project.techStack.slice(0, 4).map((t) => (
+                                                <motion.span
+                                                    key={t}
+                                                    className={styles.tag}
+                                                    whileHover={{ scale: 1.05, backgroundColor: 'rgba(244, 63, 94, 0.2)' }}
+                                                    transition={{ duration: 0.15 }}
+                                                >
+                                                    {t}
+                                                </motion.span>
+                                            ))}
+                                            {project.techStack.length > 4 && (
+                                                <span className={styles.moreTag}>+{project.techStack.length - 4}</span>
+                                            )}
+                                        </div>
+
+                                        <div className={styles.cardFooter}>
+                                            <div className={styles.metrics}>
+                                                {project.metrics?.slice(0, 2).map((m, i) => (
+                                                    <div key={i} className={styles.metricBadge}>
+                                                        <span className={styles.metricValue}>{m.value}</span>
+                                                        <span className={styles.metricLabel}>{m.label}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+
+                                            <div className={styles.viewProject}>
+                                                <span>View Project</span>
+                                                <ArrowRight size={16} />
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
+
+                                {project.liveUrl && (
+                                    <a
+                                        href={project.liveUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.liveButton}
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        <ExternalLink size={16} />
+                                        <span>Live Demo</span>
+                                    </a>
+                                )}
                             </motion.div>
                         ))}
                     </AnimatePresence>
                 </motion.div>
-            </div >
-        </section >
+            </div>
+        </section>
     );
 }

@@ -7,6 +7,12 @@
     text-align: center;
 }
 
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+}
+
 .filterContainer {
     display: flex;
     justify-content: center;
@@ -25,21 +31,21 @@
     transition: all 0.3s ease;
     font-size: 0.95rem;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .filterBtn:hover,
 .activeFilter {
     background: var(--primary);
     color: white;
-    /* Dark text */
     border-color: var(--primary);
     box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2.5rem;
 }
 
 .card {
@@ -52,16 +58,31 @@
     flex-direction: column;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+.cardLink {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
 }
 
+/* Carousel Styles */
 .imageWrapper {
     position: relative;
     width: 100%;
-    height: 220px;
+    height: 240px;
     overflow: hidden;
+}
+
+.carouselWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carouselSlide {
+    position: absolute;
+    inset: 0;
 }
 
 .image {
@@ -73,6 +94,60 @@
     transform: scale(1.05);
 }
 
+.carouselDots {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.4rem;
+    z-index: 10;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.activeDot {
+    background: var(--primary-glow);
+    box-shadow: 0 0 8px var(--primary-glow);
+    transform: scale(1.3);
+}
+
+.slideLabel {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: white;
+    z-index: 10;
+}
+
+.category {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.7rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 2rem;
+    z-index: 10;
+}
+
 .content {
     padding: 1.5rem;
     flex: 1;
@@ -80,89 +155,144 @@
     flex-direction: column;
 }
 
-.category {
-    font-size: 0.8rem;
-    color: var(--secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
 .title {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     color: var(--foreground);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
-.desc {
+.tagline {
     font-size: 0.95rem;
     color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    flex: 1;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
 }
 
 .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .tag {
     font-size: 0.75rem;
-    padding: 0.25rem 0.75rem;
+    padding: 0.3rem 0.75rem;
     border-radius: 99px;
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-secondary);
     border: 1px solid var(--glass-border);
+    transition: all 0.2s ease;
 }
 
-.links {
+.moreTag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 99px;
+    background: rgba(244, 63, 94, 0.1);
+    color: var(--primary-glow);
+    font-weight: 600;
+}
+
+.cardFooter {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.metrics {
     display: flex;
     gap: 1rem;
-    margin-top: auto;
 }
 
-.linkBtn {
-    flex: 1;
-    padding: 0.75rem;
-    border-radius: 0.75rem;
+.metricBadge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metricValue {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-glow);
+}
+
+.metricLabel {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.viewProject {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 0.5rem;
     font-size: 0.9rem;
     font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    color: var(--primary-glow);
+    transition: all 0.3s ease;
 }
 
-.demoBtn {
-    background: var(--primary);
+.card:hover .viewProject {
+    gap: 0.75rem;
+}
+
+.viewProject svg {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .viewProject svg {
+    transform: translateX(4px);
+}
+
+/* Live Demo Button */
+.liveButton {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-glow));
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: white;
-    border: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 20;
+    box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3);
 }
 
-.demoBtn:hover {
-    background: var(--primary-glow);
-    color: white;
+.liveButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(244, 63, 94, 0.5);
 }
 
-.codeBtn {
-    background: transparent;
-    border: 1px solid var(--glass-border);
-    color: var(--foreground);
-}
-
-.codeBtn:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--foreground);
+/* Responsive */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
+    }
+
+    .imageWrapper {
+        height: 200px;
+    }
+
+    .cardFooter {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
     }
 }
