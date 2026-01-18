@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="redGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#be123c"/>
+      <stop offset="100%" style="stop-color:#f43f5e"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="#0a0a0a" stroke="#be123c" stroke-width="3"/>
+  <!-- A letter -->
+  <path d="M30 75 L50 20 L55 20 L42 55 L58 55 L55 65 L38 65 L32 75 Z" fill="url(#redGold)"/>
+  <!-- R letter -->
+  <path d="M48 35 L48 75 L56 75 L56 55 L68 75 L78 75 L64 52 C70 50 74 45 74 38 C74 30 68 25 58 25 L48 25 L48 35 L58 35 C63 35 66 37 66 40 C66 43 63 46 58 46 L56 46 L56 35 Z" fill="#fbbf24"/>
+  <!-- Security shield accent -->
+  <path d="M76 18 L76 28 C76 33 73 37 68 38 C73 39 76 43 76 48 L76 50 L82 50 L82 42 C82 36 78 32 76 30 L82 30 L82 18 Z" fill="#be123c" opacity="0.6"/>
+</svg>
