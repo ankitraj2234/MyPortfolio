@@ -4,9 +4,18 @@ import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 
 const skills = [
-    "Java", "Kotlin", "C++", "MySQL",
-    "Linux", "VMware", "Apache CloudStack", "Azure",
-    "AWS", "Networking", "FxLogix", "Wireshark"
+    // Languages & Core
+    "Java", "Kotlin", "Go (Golang)", "TypeScript", "C++",
+    // Frontend
+    "React", "Next.js", "Framer Motion", "Three.js", "Tailwind CSS",
+    // Backend & Security
+    "Gin Framework", "JWT", "TOTP MFA", "Electron",
+    // Databases
+    "MySQL", "SQLite", "Firebase",
+    // Cloud & DevOps
+    "AWS", "Azure", "Oracle Cloud", "Docker", "Kubernetes",
+    // Tools & Infrastructure
+    "Linux", "VMware", "Apache CloudStack", "Git", "Wireshark"
 ];
 
 const certifications = [
